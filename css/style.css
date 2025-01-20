@@ -1,0 +1,21 @@
+.nav-items a {
+    text-decoration: none;
+    color: black;
+}
+
+.nav-items a:hover {
+    color: blue;
+}
+
+.nav-items .cart a {
+    font-size: 18px;
+}
+
+.nav-items .cart .cart-number {
+    position: absolute;
+    top: -10px;
+    left: 40%;
+    font-size: 14px;
+    width: 18px;
+    height: 18px;
+}
