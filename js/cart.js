@@ -47,7 +47,6 @@ function displayCart() {
 function increaseQuantity(itemIndex) {
     cart[itemIndex].qty += 1;
     localStorage.setItem('cart', JSON.stringify(cart));
-    alert('Your item increased in cart');
     displayCart();
 };
 
@@ -58,7 +57,6 @@ function decreaseQuantity(itemIndex) {
     else {
         cart[itemIndex].qty -= 1;
         localStorage.setItem('cart', JSON.stringify(cart));
-        alert('Your item decreased in cart');
         displayCart();
     }
 };
@@ -66,7 +64,7 @@ function decreaseQuantity(itemIndex) {
 function removeItem(itemIndex) {
     cart.splice(itemIndex, 1);
     localStorage.setItem('cart', JSON.stringify(cart));
-    alert('Your item removed from cart');
+    new swal('Hi..!', "Item Removed Successfully" ,"success");
     displayCart();
 };
 

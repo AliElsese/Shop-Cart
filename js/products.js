@@ -101,22 +101,19 @@ function showProducts() {
 };
 
 function addToCart(productIndex) {
-    let product = products.find((product, index) => {
-        return index === productIndex;
-    });
+    let product = products[productIndex];
     
-    const existingProduct = cart.findIndex((item) => {
+    const existingProduct = cart.find((item) => {
         return item.name === product.name
     });
 
-    if(existingProduct > -1) {
-        cart[existingProduct].qty += 1;
-        alert('Your item quantity increased');
+    if(existingProduct) {
+        existingProduct.qty += 1;
+        new swal('Hi..!', "Item Quantity Increased Successfully" ,"success");
     }
     else {
-        product.qty = 1;
-        cart.push(product);
-        alert('Your item added to cart');
+        cart.push({...product, qty: 1});
+        new swal('Hi..!', "Item Added Successfully" ,"success");
     }
 
     localStorage.setItem('cart', JSON.stringify(cart));
